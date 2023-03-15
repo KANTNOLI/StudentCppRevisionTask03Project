@@ -50,7 +50,5 @@ int task01(int number) {
 		return 0;
 	}
 
-
-
 	return sum;
 }

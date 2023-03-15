@@ -26,7 +26,7 @@
 *	[output 3]: 34 0 
 *
 *	[ input 4]: 0 27 8
-*	[output 4]: 4 16
+*	[output 4]: 4 16 ///////////////////
 *
 *	[ input 5]: 2 0 5
 *	[output 5]: 10 0
@@ -52,5 +52,20 @@
 */
 
 string task02(int a, int b, int n) {
-	return "error";
+
+	if (a > 0 && n > 0 && b >= 0 || a >= 0 && b > 0 && n > 0)
+	{
+		a *= n;
+		b *= n;
+		if (b > 99)
+		{
+			a += b / 100;
+			b %= 100;
+		}
+	}
+	else {
+		return  "error";
+	}
+
+	return to_string(a) + " " + to_string(b);
 }
