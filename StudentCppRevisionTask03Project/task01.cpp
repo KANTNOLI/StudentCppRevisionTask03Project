@@ -37,5 +37,20 @@
 */
 
 int task01(int number) {
-	return 0;
+	number = number > 0 ? number : -number;
+	int sum = 0;
+
+	if (number < 10000) {
+		while (number > 0) {
+			sum += number % 10;
+			number /= 10;
+		}
+	}
+	else {
+		return 0;
+	}
+
+
+
+	return sum;
 }
