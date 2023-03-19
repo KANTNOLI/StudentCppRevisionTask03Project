@@ -43,6 +43,33 @@
 */
 
 bool taskX(int n, int m, int k) {
+	if (n <= 0 || m <= 0 || k <= 0)
+	{
+		return false;
+	}
+	int size = n * m;
+	int nmain = m;
+	int nmain2 = n;
 
-    return n <= 0 || m <= 0 || k <= 0 ? false : n == k || (n * m) - n == k || m == k || (n * m) - m == k ? true : false;
+	while (size > nmain)
+	{
+		
+		if (nmain == k)
+		{
+			return true;
+		}
+		nmain += m;
+	}
+
+	while (size > nmain2)
+	{
+
+		if (nmain2 == k)
+		{
+			return true;
+		}
+		nmain2 += n;
+	}
+
+	return false;
 }
